@@ -25,3 +25,7 @@
 .campo-errado {
 	border: 3px solid red;
 }
+
+body {
+	overflow: scroll;
+}

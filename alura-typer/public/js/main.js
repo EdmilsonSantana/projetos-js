@@ -10,7 +10,6 @@ var contadorCaracteres = $("#contador-caracteres");
 var tempoDigitacao = $("#tempo-digitacao");
 var botaoReiniciar = $("#botao-reiniciar");
 var botaoRemover = $(".botao-remover");
-var placar = $(".placar");
 
 var tempoInicial = tempoDigitacao.text();
 
