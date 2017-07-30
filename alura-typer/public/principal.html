@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/libs/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/libs/google-fonts.css">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/tooltipster.bundle.min.css">
+
 </head>
 <body>
 	<div class="container">
@@ -49,7 +52,13 @@
 	    	  	<i class="material-icons">repeat_one</i>
 	    	</a>
 	    	<input type="number" id="frase-id" min="0" />
-	    	<a class="btn-floating btn-large waves-effect waves-light yellow" id="botao-sincroniza">
+
+	    	<div class="select-usuarios">
+	    		<select id="usuarios">
+	    		</select>
+	    	</div>
+
+	    	<a title="Sincronizado com sucesso." class="tooltip btn-floating btn-large waves-effect waves-light yellow" id="botao-sincroniza">
 	    	  	<i class="material-icons">swap_vert</i>
 	    	</a>
 	    </div>
@@ -74,7 +83,9 @@
 	    	</table>
 	    </section>
     </div>
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.js"></script>
+    <script type="text/javascript" src="js/libs/selectize.js"></script>
+    <script type="text/javascript" src="js/libs/tooltipster.bundle.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/placar.js"></script>
     <script type="text/javascript" src="js/frase.js"></script>

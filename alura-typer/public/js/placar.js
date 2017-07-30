@@ -1,7 +1,8 @@
 
 var placar = $(".placar");
 var botaoPlacar = $("#botao-placar");
-var botaoSincroniza = $("#botao-sincroniza")
+var botaoSincroniza = $("#botao-sincroniza");
+var campoUsuario = $("#usuarios");
 
 const intervaloAnimacaoRemover = 1000;
 const intervaloAnimacaoPlacar = 600;
@@ -13,7 +14,7 @@ botaoSincroniza.click(sincronizarPlacar);
 
 function inserirLinhaPlacar() {
 	let corpoTabela = placar.find("tbody");
-	let usuario = "Edmilson";
+	let usuario = campoUsuario.val();
 	let numPalavras = contadorPalavras.text();
 
 	let linha = novaLinhaPlacar(usuario, numPalavras);
@@ -75,10 +76,19 @@ function atualizarPlacar() {
 }
 
 function sincronizarPlacar() {
+	let tooltip = $(".tooltip");
 	let placar = obterPontuacoesPlacar();
 	let dados = { placar };
 	$.post("http://localhost:3000/placar", dados, function() {
-		console.log("Salvou o placar.");
+		tooltip.tooltipster("open")
+			.tooltipster("content", "Sucesso ao sincronizar.");
+	})
+	.fail(() => {
+		tooltip.tooltipster("open")
+			.tooltipster("content", "Falha ao sincronizar.");
+	})
+	.always(() => {
+		setTimeout(() => tooltip.tooltipster("close"), 1200);
 	});
 }
 
