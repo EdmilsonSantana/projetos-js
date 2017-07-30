@@ -9,7 +9,6 @@ var contadorPalavras = $("#contador-palavras")
 var contadorCaracteres = $("#contador-caracteres");
 var tempoDigitacao = $("#tempo-digitacao");
 var botaoReiniciar = $("#botao-reiniciar");
-var botaoRemover = $(".botao-remover");
 
 var tempoInicial = tempoDigitacao.text();
 
@@ -19,7 +18,7 @@ $(() => {
 	inicializarCronometro();
 	inicializarMarcadores();
 	botaoReiniciar.click(reiniciarJogo);
-	botaoRemover.click(removerLinha);
+	atualizarPlacar();
 });
 
 

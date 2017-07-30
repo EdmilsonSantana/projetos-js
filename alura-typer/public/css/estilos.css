@@ -42,3 +42,7 @@ body {
 #frase-id {
 	width: 40px;
 }
+
+#botao-sincroniza {
+	float: right;
+}
