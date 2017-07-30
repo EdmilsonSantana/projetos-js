@@ -45,9 +45,8 @@ function inicializarContadores() {
 }
 
 function inicializarCronometro() {
-	let tempoRestante = tempoInicial;
-
 	campo.one("focus", ()=> {
+		let tempoRestante = tempoInicial;
 		let cronometroId = setInterval(() => {
 			botaoReiniciar.attr("disabled", true);
 			tempoRestante--;
@@ -68,8 +67,8 @@ function finalizarJogo() {
 }
 
 function inicializarMarcadores() {
-	let frase = campoFrase.text();
 	campo.on("input", ()=> {
+		let frase = campoFrase.text();
 		let digitado = campo.val();
 
 		if(frase.startsWith(digitado)) {
@@ -94,4 +93,8 @@ function reiniciarJogo() {
 	inicializarCronometro();
 }
 
+function atualizarTempoInicial(tempo) {
+	tempoInicial = tempo;
+	tempoDigitacao.text(tempo);
+}
 
